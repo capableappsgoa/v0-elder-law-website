@@ -1,18 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, Users, Award, FileText, Heart, Scale } from "lucide-react"
+import { ArrowRight, Shield, FileText, Heart, Scale } from "lucide-react"
 
 const specialties = [
   { icon: FileText, title: "Wills & Trusts", description: "Secure your estate" },
   { icon: Heart, title: "Medicaid Planning", description: "Preserve your assets" },
   { icon: Scale, title: "Elder Law", description: "Comprehensive care" },
-]
-
-const stats = [
-  { icon: Users, value: "500+", label: "Families Served" },
-  { icon: Award, value: "25+", label: "Years Experience" },
-  { icon: Shield, value: "98%", label: "Client Satisfaction" },
 ]
 
 export function Hero() {
@@ -42,16 +36,14 @@ export function Hero() {
                   <Link href="#services">Explore Services</Link>
                 </Button>
               </div>
-              <div data-intro-order="4" className="hero-intro grid grid-cols-3 gap-3 border-t border-border pt-6 sm:gap-6">
-                {stats.map((stat) => (
-                  <div key={stat.label}>
-                    <div className="mb-1 flex items-center gap-2.5">
-                      <stat.icon aria-hidden="true" className="h-4 w-4 shrink-0 text-primary" />
-                      <span className="font-serif text-2xl font-semibold text-accent">{stat.value}</span>
-                    </div>
-                    <p className="text-xs leading-5 text-muted-foreground sm:text-sm">{stat.label}</p>
-                  </div>
-                ))}
+              <div data-intro-order="4" className="hero-intro flex items-center gap-4 border-t border-border pt-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/5">
+                  <Shield aria-hidden="true" className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <p className="font-serif text-3xl font-semibold leading-tight text-accent">100%</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Client Satisfaction</p>
+                </div>
               </div>
             </div>
 

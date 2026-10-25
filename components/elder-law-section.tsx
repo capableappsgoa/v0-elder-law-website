@@ -80,18 +80,13 @@ export function ElderLawSection() {
             </div>
 
             {/* Stats Row */}
-            <div className="mt-9 grid grid-cols-3 gap-3 border-t border-white/15 pt-7 sm:gap-6">
-              <div>
-                <div className="mb-2 font-serif text-3xl font-medium text-white sm:text-4xl">25+</div>
-                <div className="text-xs text-white/70 sm:text-sm">Years Experience</div>
+            <div className="mt-9 flex items-center gap-4 border-t border-white/15 pt-7">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
+                <Shield aria-hidden="true" className="h-5 w-5 text-white" />
               </div>
               <div>
-                <div className="mb-2 font-serif text-3xl font-medium text-white sm:text-4xl">500+</div>
-                <div className="text-xs text-white/70 sm:text-sm">Families Helped</div>
-              </div>
-              <div>
-                <div className="mb-2 font-serif text-3xl font-medium text-white sm:text-4xl">98%</div>
-                <div className="text-xs text-white/70 sm:text-sm">Client Satisfaction</div>
+                <p className="font-serif text-3xl font-medium leading-tight text-white sm:text-4xl">100%</p>
+                <p className="mt-1 text-sm text-white/70">Client Satisfaction</p>
               </div>
             </div>
           </div>

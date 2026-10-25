@@ -38,11 +38,11 @@ export function Mission() {
               />
             </div>
             
-            {/* Floating stats card */}
+            {/* Trusted service badge */}
             <div className="absolute bottom-0 right-0 rounded-xl border border-border border-b-[3px] border-b-primary bg-card p-5 shadow-lg shadow-accent/5 sm:p-6">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-2xl font-serif font-bold text-primary">25+</span>
+                  <Shield aria-hidden="true" className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">Years of</p>
@@ -59,7 +59,7 @@ export function Mission() {
           <div data-reveal data-reveal-order="1">
             <div>
               <span className="section-kicker">
-                Meet the Attorney
+                About Your Attorney, Deep Chopra
               </span>
             </div>
             
@@ -79,28 +79,16 @@ export function Mission() {
               Advocate admitted to practice law in the High Courts of Mumbai and Goa, India
             </p>
             
-            <p className="mb-7 border-l-2 border-primary/30 pl-5 text-lg leading-relaxed text-muted-foreground">
-              Having a well-drafted estate plan ensures your estate passes to whom you want, when you want, 
-              in the manner you choose. Your family won&apos;t endure costly probate, and the government 
-              won&apos;t take what you&apos;ve spent a lifetime building.
-            </p>
-
-            {/* Value cards */}
-            <div className="mb-8 divide-y divide-border/70">
-              {values.map((value, index) => (
-                <div 
-                  key={index}
-                  className="mission-value flex items-start gap-4 py-4"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-accent/5">
-                    <value.icon aria-hidden="true" className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="mb-1 font-semibold text-accent">{value.title}</h3>
-                    <p className="text-sm text-muted-foreground">{value.description}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="mb-8 space-y-4 border-l-2 border-primary/30 pl-5 text-base leading-7 text-muted-foreground">
+              <p>
+                Attorney Deep will help you craft an estate plan to ensure your accumulated legacy-wealth transfers seamlessly to your chosen beneficiaries, on your timeline and under the specific terms you dictate.
+              </p>
+              <p>
+                By establishing tailored instruments such as revocable and irrevocable trusts, comprehensive last Wills &amp; Pour-Over Wills and Testaments, and Statutory Powers of Attorney, you safeguard your family from the protracted delays and public expense of Surrogate’s Court probate proceedings.
+              </p>
+              <p>
+                Furthermore, proactive elder law and long-term care planning by Attorney Deep will protect your hard-earned assets against Medicaid spend-down depletion and unnecessary federal and state tax liabilities, securing peace of mind for generations to come.
+              </p>
             </div>
 
             <Button 
@@ -114,6 +102,21 @@ export function Mission() {
               </Link>
             </Button>
           </div>
+        </div>
+        <div className="mt-12 grid gap-5 border-t border-border/70 pt-8 md:grid-cols-3">
+          {values.map((value, index) => (
+            <div key={value.title} data-reveal data-reveal-order={index}>
+              <div className="mission-value flex items-start gap-4 rounded-xl bg-background p-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-accent/5">
+                  <value.icon aria-hidden="true" className="h-5 w-5 text-accent" />
+                </div>
+                <div>
+                  <h3 className="mb-1 font-semibold text-accent">{value.title}</h3>
+                  <p className="text-sm text-muted-foreground">{value.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

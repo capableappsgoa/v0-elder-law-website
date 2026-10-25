@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -19,18 +20,29 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-card/95 shadow-sm shadow-accent/[0.02] backdrop-blur-md">
       <div className="site-container">
-        <div className="flex min-h-24 items-center justify-between gap-5 py-3">
+        <div className="flex min-h-24 items-center justify-between gap-3 py-3 sm:gap-5">
           {/* Logo */}
-          <Link href="/" className="flex max-w-[285px] flex-col sm:max-w-[310px]">
-            <span className="font-serif text-[22px] font-semibold leading-tight tracking-tight sm:text-2xl">
-              <span className="text-accent">Deep</span>
-              <span className="text-primary"> Chopra, Esq.</span>
-            </span>
-            <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Attorney At Law
-            </span>
-            <span className="mt-1 text-[9px] uppercase leading-relaxed tracking-[0.09em] text-muted-foreground sm:text-[10px]">
-              Estate & Elder Law Planning • Wills & Trusts • Probate • Real Estate
+          <Link href="/" className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+            <Image
+              src="/deep-chopra-logo.webp"
+              alt="Deep Chopra law logo with gold scales, wreath, and an Old English D on blue"
+              width={256}
+              height={256}
+              sizes="(min-width: 640px) 64px, 48px"
+              priority
+              className="h-12 w-12 shrink-0 rounded-lg border border-accent/10 object-contain shadow-sm sm:h-16 sm:w-16 sm:rounded-xl"
+            />
+            <span className="flex min-w-0 max-w-[260px] flex-col">
+              <span className="whitespace-nowrap font-serif text-[17px] font-semibold leading-tight tracking-tight min-[375px]:text-xl sm:text-2xl">
+                <span className="text-accent">Deep</span>
+                <span className="text-primary"> Chopra, Esq.</span>
+              </span>
+              <span className="mt-1 text-[8px] font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:text-[10px]">
+                Attorney At Law
+              </span>
+              <span className="mt-1 text-[8px] uppercase leading-relaxed tracking-[0.06em] text-muted-foreground sm:text-[9px]">
+                Estate & Elder Law Planning • Wills & Trusts • Probate • Real Estate
+              </span>
             </span>
           </Link>
 
@@ -61,7 +73,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="rounded-lg border border-border p-2.5 text-accent transition-colors hover:bg-secondary xl:hidden"
+            className="shrink-0 rounded-lg border border-border p-2.5 text-accent transition-colors hover:bg-secondary xl:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
